@@ -1,0 +1,13 @@
+{
+  "verifyAddProductToCartSuccessful": [
+    {
+      "searchText": "stainless work table"
+    }
+  ],
+  "verifyRemoveProductToCartSuccessful": [
+    {
+      "searchText": "stainless work table",
+      "message": "Your cart is empty."
+    }
+  ]
+}

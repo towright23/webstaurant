@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI Test" parallel="tests" thread-count="2">
+    <test name = "Products Test">
+        <parameter name="browserRemote" value="chromeRemote"/>
+        <classes>
+            <class name="com.webstaurant.uitests.ProductsTest"/>
+        </classes>
+    </test>
+    <test name = "Cart Test">
+        <parameter name="browserRemote" value="chromeRemote"/>
+        <classes>
+            <class name="com.webstaurant.uitests.ShoppingCartTest"/>
+        </classes>
+    </test>
+</suite>
