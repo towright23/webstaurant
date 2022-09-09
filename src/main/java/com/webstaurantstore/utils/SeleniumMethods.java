@@ -65,4 +65,8 @@ public class SeleniumMethods extends WebstaurantCore {
         return driver.findElements(byElemLocator);
     }
 
+    public boolean isElementPresent(By byElemLocator) {
+        return driver.findElements(byElemLocator).size() > 0;
+    }
+
 }

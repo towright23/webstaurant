@@ -12,6 +12,7 @@ public class ShoppingCartTest extends TestCore {
                 .navigateToLastPage()
                 .setLastItemName()
                 .addLastItemToCart()
+                .acceptProductAccessorySubmitIfPresent()
                 .clickViewShoppingCart()
                 .verifyItemAddedToCartSuccessful();
     }
@@ -23,6 +24,7 @@ public class ShoppingCartTest extends TestCore {
                 .navigateToLastPage()
                 .setLastItemName()
                 .addLastItemToCart()
+                .acceptProductAccessorySubmitIfPresent()
                 .clickViewShoppingCart()
                 .removeAllItemsFromCart()
                 .selectEmptyCartFromPopUp()
