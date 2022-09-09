@@ -43,8 +43,11 @@ public class SearchResultsPage extends WebstaurantCore {
                 sel.jsClick(buttonLocator);
             }
             if(i == totalPages) {
-                sel.jsScroll(SearchResultsPageLocators.LAST_PAGE_BUTTON_X);
-                sel.selClickBy(SearchResultsPageLocators.LAST_PAGE_BUTTON_X);
+                SearchResultsPageLocators search = new SearchResultsPageLocators();
+                String lastPage = String.valueOf(i);
+                By lastPageLoc = search.getLastPageButton(lastPage, driver);
+                sel.jsScroll(lastPageLoc);
+                sel.selClickBy(lastPageLoc);
             }
             verifyTextExistsForSearchResults(verifyText, SearchResultsPageLocators.ALL_SEARCH_RESULTS_PRODUCT_LISTING_ANCHOR_CSS);
         }
