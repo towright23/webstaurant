@@ -25,6 +25,13 @@ public class SearchResultsPage extends WebstaurantCore {
         verifyTextExistsForSearchResults(verifyText, SearchResultsPageLocators.ALL_CATEGORIES_BOX_ANCHOR_CSS);
         return this;
     }
+
+    public SearchResultsPagePopUp acceptProductAccessorySubmitIfPresent() {
+        if(sel.isElementPresent(SearchResultsPageLocators.PRODUCT_ACCESSORIES_FOR_POPUP_SUBMIT)) {
+            sel.selClickBy(SearchResultsPageLocators.PRODUCT_ACCESSORIES_FOR_POPUP_SUBMIT);
+        }
+        return new SearchResultsPagePopUp(driver);
+    }
     SeleniumMethods sel = new SeleniumMethods(driver);
     public SearchResultsPage verifyExpectedTextAgainstSearchResultsProductListing(String verifyText) {
         int totalPages = getTotalSearchResultsPageCount();
@@ -75,15 +82,16 @@ public class SearchResultsPage extends WebstaurantCore {
         itemName = getItemName(search.getProductNameLocatorByIndexCss(totalProdCount, driver));
         return this;
     }
-    public SearchResultsPagePopUp addLastItemToCart() {
+    public SearchResultsPage addLastItemToCart() {
         String totalProdCount = String.valueOf(getTotalProductListCount());
         SearchResultsPageLocators search = new SearchResultsPageLocators();
         sel.selClickBy(search.getProductLocatorByIndexCss(totalProdCount, driver));
-        return new SearchResultsPagePopUp(driver);
+        return this;
     }
 
     public String getItemName(By locator) {
         return sel.getText(locator);
     }
+
 
 }
